@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setUp>
+	<volume>
+		<isPlay_sound>true</isPlay_sound>
+		<isPlay_music>true</isPlay_music>
+		<volume_sound>0.4</volume_sound>
+		<volume_music>0.8</volume_music>
+	</volume>
+	<music>
+		<music_list>[1,2,3,4,5,6,7,8,9,10,11,12,13,14]</music_list>
+	</music>
+	<img>
+		<icon>2</icon>
+		<img_color>'88aaaa'</img_color>
+	</img>
+	<background>
+		<bg>1</bg>
+	</background>
+</setUp>

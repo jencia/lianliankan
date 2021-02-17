@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>连连看</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/jquery.inputs.js"></script>
+<link rel="stylesheet" type="text/css" href="style/index.css" />
+</head>
+<body>
+<div id="main_interface">
+	<div id="main_menu">
+		<ul>			
+			<li>				
+				<div id="model">
+					<ul>
+						<li>
+							<div class="xx_diff">								
+								<input type="button" value="地图" />
+								<input type="button" value="经典" />
+								<input type="button" value="传统" />
+								<input type="button" value="读档" />
+							</div>
+							<input type="button" value="休闲模式" />
+						</li>
+						<li>
+							<div class="ct_diff">								
+								<input type="button" value="重新开始" />
+								<input type="button" value="读档" />
+							</div>
+							<input type="button" value="传统模式" />							
+						</li>
+						<li>				
+							<div class="jd_diff">
+								<input type="button" value="困难" />
+								<input type="button" value="普通" />
+								<input type="button" value="简单" />
+								<input type="button" value="读档" />
+							</div>
+							<input type="button" value="经典模式" />
+						</li>
+						<li>
+							<div class="dt_diff">
+								<input type="button" value="自选图库" />
+								<input type="button" value="随机地图" />
+								<input type="button" value="读档" />
+							</div>
+							<input type="button" value="地图模式" />
+						</li>
+						<li>
+							<div class="cg_diff">
+								<input type="button" value="正在研发中..." />
+							</div>
+							<input type="button" value="闯关模式" />
+						</li>		
+						<li><input type="button" value="返回上一级" /></li>		
+					</ul>
+				</div>
+				<input type="button" value="单机游戏" />
+			</li>
+			<li><input type="button" value="网络对战" /></li>
+			<li><input type="button" value="设置" /></li>
+			<li>
+				<input type="button" value="帮助" />
+				<div id="help">
+					<header>
+						<ul>
+							<li class="select">游戏规则</li>
+							<li>模式介绍</li>
+							<li>关于我们</li>
+						</ul>
+						<div class="close">×</div>
+					</header>
+					<article>
+						<div id="rule">
+							<dl>
+								<dd>1.相邻的相同图片可以消除</dd>
+								<dt><img src="images/ruleImg1.png" /></dt>
+							</dl>	
+							<dl>	
+								<dd>2.直线可以连接的相同图片可以消除</dd>
+								<dt><img src="images/ruleImg2.png" /></dt>
+							</dl>	
+							<dl>	
+								<dd>3.拐一个弯后能够连接的相同图片可以消除</dd>
+								<dt><img src="images/ruleImg3.png" /></dt>
+							</dl>	
+							<dl>
+								<dd>4.拐两个弯后能够连接的相同图片可以消除</dd>
+								<dt><img src="images/ruleImg4.png" /></dt>
+							</dl>
+							<dl>
+								<dd style="width:300px;">5.全部图像消除完则过关</dd>
+							</dl>
+						</div>
+						<div id="modelDsc">
+							<div>
+								<section>休闲模式</section>
+								<article>
+									<p>模式特点：没有时间限制，其他一样</p>
+									<p>读　　档：如果玩家从未玩过该模式，默认从传统模式的第一关开始，否则会读取你上一次退出时的记录（包括模式类型）</p>
+									<p>传　　统：舍弃存档，从传统模式的第一关开始</p>
+									<p>经　　典：舍弃存档，从经典模式的简单难度的第一关开始，通过后自动进入下一个难度</p>
+									<p>地　　图：舍弃存档，从地图模式的第一关开始，地图随机</p>
+								</article>
+							</div>
+							<div>
+								<section>传统模式</section>
+								<article>
+									<p>模式特点：第一关由12×7的矩形呈现，有10种图像，随着关卡的增加，图像种类和个数逐渐增加</p>
+									<p>读　　档：如果玩家从未玩过该模式，默认从第一关开始，否则会读取你上一次退出时的记录</p>
+									<p>重新游戏：舍弃存档，从第一关开始</p>
+								</article>
+							</div>
+							<div>
+								<section>经典模式</section>
+								<article>
+									<p>模式特点：此模式的图像可以移到，每关的移到方式不一样，每关的图像个数和种类是固定的，个数种类的多少在于难度的大小，前2个难度的关卡各14关，通过完自动跳到下一个难度，最后一个难度无限关</p>
+									<p>读　　档：如果玩家从未玩过该模式，默认从简单难度第一关开始，否则会读取你上一次退出时的记录</p>
+									<p>简　　单：舍弃存档，从第一关开始，该难度有12×6个图像</p>
+									<p>普　　通：舍弃存档，从第一关开始，该难度有14×7个图像</p>
+									<p>困　　难：舍弃存档，从第一关开始，该难度有16×8个图像</p>
+								</article>
+							</div>
+							<div>
+								<section>地图模式</section>
+								<article>
+									<p>模式特点：此模式的图像排列方式每一关都不一样，最多可容纳19×11-1可图像，每个都是按照指定的地图排列，每个的地图是随机的，所以难度是不固定的</p>
+									<p>读　　档：如果玩家从未玩过该模式，默认从随机地图的第一关开始，否则会读取你上一次退出时的记录</p>
+									<p>随机地图：随机从内置43张地图里抽出一张作为第一关难道</p>
+									<p>自选图库：可以手动选一张地图作为第一关难度，可以从内置图库里选，也可以自定义地图</p>
+								</article>
+							</div>
+							<div>
+								<section>闯关模式</section>
+								<article>
+									<p>模式特点：以消灭特殊图像作为过关条件，有设定BOSS战，特殊图像都可以移到，且有特殊技能，其他图像会随之变化</p>
+									<p style="color:red;"><br />　　　　　此模式正在策划中......</p>
+								</article>
+							</div>
+							<div class="catalog">
+								<dl>
+									<dd>
+										<span class="cl_title">休闲模式</span>
+										<span class="cl_dot" style="color:blue;">●</span>
+									</dd>
+									<dd>
+										<span class="cl_title">传统模式</span>
+										<span class="cl_dot">○</span>
+									</dd>
+									<dd>
+										<span class="cl_title">经典模式</span>
+										<span class="cl_dot">○</span>
+									</dd>
+									<dd>
+										<span class="cl_title">地图模式</span>
+										<span class="cl_dot">○</span>
+									</dd>
+									<dd>
+										<span class="cl_title">闯关模式</span>
+										<span class="cl_dot">○</span>
+									</dd>
+								</dl>
+							</div>
+						</div>
+						<div id="about">
+							<p>游戏名：连连看</p>
+							<p>版本：v2.3</p>
+							<p>作者：杨杰灿</p>
+							<p>QQ：1073956837</p>
+							<p>电话：156****0838</p>
+						</div>
+					</article>
+				</div>
+			</li>
+			<li><input type="button" value="退出" /></li>
+		</ul>
+	</div>
+	<div id="maps">
+		<div class="map_draw"><ul><!--绘图区域--></ul></div>
+		<div id="right_option">
+			<div class="map_depot">
+				<strong  class='but top'>上一页</strong></li>				
+				<div class="cont_visu"><ul><!--内置地图--></ul></div>
+				<strong class='but bottom'>下一页</strong></li>
+			</div>
+			<button class="parm_draw">
+				左键添加<br>
+				右键删除<br>
+				可按住移到
+			</button>
+			<input type="button" class="custom" value="自定义"/>	
+			<input type="button" class="starGame" value="开始游戏" />		
+			<input type="button" class="leave_draw" value="离开" />	
+		</div>
+	</div>
+	<div id="instruction"><!--这里是提示语--></div>
+</div>
+<div id="setUp">
+	<form action="" method="post">
+		<div class="volume">
+			<h2>音量设置</h2>
+			<input typex="checkbox" value="1" class="sound_play" name="sm_play" checked="checked"/><span>播放音效</span>
+			<input typex="checkbox" value="2" class="music_play" name="sm_play" checked="checked"/><span>播放音乐</span><br />
+			<label><span>音效音量</span><input typex="range" class="sound_vol" name="sound_vol"/><br /></label>
+			<label><span>音乐音量</span><input typex="range" class="music_vol" name="music_vol"/></label>
+		</div>
+		<div class="music_choice">
+			<h2>音乐设置</h2>
+			<div class="music_list">
+				<ul></ul>
+				<div class="all_music">
+					<input typex="checkbox" checked="checked"/><span>全选</span>
+				</div>
+			</div>
+			<div class="music_show">
+				<h3>请选择歌曲试听</h3>
+				<audio controls="controls"></audio>
+			</div>
+		</div>
+		<div class="img_choice">
+			<h2>图像设置</h2>
+			<div class="setImg">
+				<input typex="radio" name="img_type" checked="checked" class="c_img"/><span>图片</span>
+				<div class="img_list">
+					<input typex="radio" name="img_list"/><span>QQ表情</span><br/>
+					<input typex="radio" name="img_list" checked="checked"/><span>车标</span>				
+				</div>
+				<input typex="radio" name="img_type" class="c_solid"/><span>纯色</span>
+				<label style="color:#666">#<input type="text" disabled="disabled" class="solid_color" value="88aaaa" maxlength="6"/></label><input type="button" disabled="disabled" value="变" class="but_color"><br />
+				<span class="s_c_title">(输入6位0-9或a-f的数)</span>
+			</div>
+			<div class="img_show"><ul></ul></div>
+		</div>
+		<div class="bg_choice">
+			<h2>背景图设置</h2>
+			<div class="setBg">
+				<input typex="radio" name="bg_list" /><span>无背景</span><br/>
+				<input typex="radio" name="bg_list" checked="checked" /><span>bg1</span><br/>
+			</div>
+			<div class="bg_show"></div>
+		</div>
+		<input type="submit" value="保存设置" id="sub" />
+		<input type="button" value="退出" class="close" />
+	</form>
+</div>
+<!--自定义消息弹窗-->
+<div id="lock2">
+	<div class="message">
+		<h3>灿哥提醒您：</h3>
+		<p><!--消息--></p>
+		<input type="button" value="确定" />
+	</div>
+</div>
+<div id="game_interface">
+	<h1 class="checkpoint"><!-- 关卡数 --></h1>
+	<div id="box"><ul><!-- 图片存放点 --></ul></div>
+	<audio id="bgMusic" autoplay="autoplay"><!-- 背景音乐 --></audio>
+	<audio id="sound"><!-- 按键音效 --></audio>
+	<div class="time"><strong title="剩下150秒"><!-- 时间进度条 --></strong></div>
+	<!-- 暂停时和游戏结束显示的内容 -->
+	<div id="lock">
+		<div class="pause">
+			<h1>暂停</h1><br/ >
+			<p>点击此处继续</p>
+		</div>
+		<div class="end">
+			<h1> Game Over!</h1>
+			<p class="max_checkpoint">第N关</p>
+			<p class="max_carom">最高连击数:<span>0</span></p>
+			<p class="max_grades">总　分:<span>0</span></p>
+			<input type="button" value="返回主菜单" id="again"/>
+		</div>
+	</div>
+	<!-- 左下角连击时出现的内容 -->
+	<div id="carom">
+		<div class="carCou">2连击</div>
+	</div>
+	<!-- 按钮们 -->
+	<nav>	
+		<input type="button" value="3" class="prompt" title="提示操作"/>
+		<input type="button" value="1" class="refresh" title="重新打乱位置" />
+		<input type="button" value="暂停" class="stop" title="暂停游戏"/>
+		<input type="button" value="重来" class="reset" title="重新游戏" />
+		<input type="button" value="主菜单" class="mainMenu" title="返回主菜单" />
+	</nav>
+	<!-- 加分值和总分数值 -->
+	<div id="grade">0</div>
+	<div id="grades">0</div>
+</div>
+</body>
+</html>

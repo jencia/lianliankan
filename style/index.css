@@ -1,0 +1,726 @@
+*{margin:0;padding:0;}
+ul{list-style:none;}
+body{
+	background:url(../images/bg1.jpg) no-repeat;
+	overflow:hidden;
+}
+@font-face{
+	font-family:myFont;
+	src:url("../hwkt.ttf") format("truetype");
+}
+/*====================== S 主界面 ========================*/
+/*主菜单栏*/
+#main_menu{
+	//display:none;
+	width:140px;
+	margin:10% auto 0;
+	position:relative;
+}
+#main_menu ul li input{
+	width:140px;
+	height:40px;
+	position:absolute;
+	left:0;
+	top:0;
+	color:#333;
+	font-size:23px;
+	font-family:myFont;
+	cursor:pointer;	
+	box-shadow:2px 2px 5px #333;
+	background:#ca2;
+	border:1px solid #666;
+	border-radius:5px;
+}
+#main_menu ul li #model input{
+	display:none;
+}
+
+/*---------------------设置界面------------------------*/
+#setUp{
+	position:fixed;
+	top:295px;
+	left:430px;
+	z-index:20;
+	width:0;
+	height:0;
+	background:#ccc;
+	border:1px solid #999;
+	border-radius:10px;
+	font-family:myFont;
+	font-size:18px;
+	color:#555;
+	overflow:hidden;
+	color:#5E87A2;
+	padding-top:5px;
+	display:none;
+	user-select:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+}
+#setUp form> div{
+	width:370px;
+	height:160px;
+	margin:15px 10px 5px 21px;
+	float:left;
+	border:1px solid #ccc;
+	box-shadow:1px 1px 5px #888,1px 1px 5px #888 inset;
+	position:relative;
+	padding:20px 0 0 20px;
+	font-family:"黑体";
+}
+#setUp form> div h2{
+	position:absolute;
+	top:-15px;
+	left:20px;
+	color:#426ab3;
+	letter-spacing:-4px;
+	text-shadow:3px 3px 0 #eee;
+	font-family:myFont;
+}
+#setUp span{
+	vertical-align:2px;
+}
+/*音量设置*/
+#setUp .volume .music_play{
+	margin-left:40px;
+	margin-top:10px;
+}
+#setUp .volume label{
+	display:block;
+	margin-top:10px;
+}
+/*音乐选择*/
+#setUp .music_choice{position:relative;}
+#setUp .music_choice .music_list{
+	width:110px;
+	height:130px;
+	float:left;
+	margin-top:10px;
+	margin-left:5px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	border:1px solid #aaa;
+	background:#ddd;
+}
+#setUp .music_choice .music_list li{
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	padding-left:5px;
+	cursor:pointer;
+	text-overflow:ellipsis;
+}
+#setUp .music_choice .music_list li:nth-last-child(1){
+	margin-bottom:19px;
+}
+#setUp .music_choice .music_list li:hover{
+	background:#aaa;
+}
+#setUp .music_choice .music_list .all_music{
+	width:88px;
+	height:19px;
+	position:absolute;
+	top:141px;
+	left:26px;
+	background:#eee;
+	padding:1px 0 0 5px;
+	font-size:15px;
+}
+#setUp .music_choice .music_show{
+	width:220px;
+	height:130px;
+	float:left;
+}
+#setUp .music_choice .music_show h3{
+	margin-top:40px;
+	text-align:center;
+}
+#setUp .music_choice .music_show audio{
+	margin:30px 0 0 10px;
+	width:230px;
+}
+/*图片选择*/
+#setUp .img_choice .setImg{float:left;margin-left:5px;}
+#setUp .img_choice .img_list{
+	width:110px;
+	height:90px;
+	overflow-y:auto;
+	overflow-x:hidden;
+	border:1px solid #aaa;
+	margin-left:10px;
+	background:#ddd;
+}
+#setUp .img_choice .img_list li:hover{background:#aaa;}
+#setUp .img_choice .solid_color{
+	font-size:16px;
+	width:53px;
+	ime-mode:disabled;
+}
+#setUp .img_choice .s_c_title{
+	text-indent:100px;
+	font-size:14px;
+	color:#666;
+	vertical-align:5px;
+}
+#setUp .img_choice .but_color{
+	width:22px;height:22px;
+}
+#setUp .img_choice .img_show{
+	width:120px;
+	height:120px;
+	float:left;
+	margin:10px 40px;
+	border:1px solid #999;
+}
+#setUp .img_choice .img_show ul li{
+	width:58px;
+	height:58px;
+	font-size:25px;
+	color:#444;
+	float:left;
+	text-align:center;
+	line-height:60px;
+	border:1px solid #ccc;
+	opacity:0.8;
+}
+/*背景设置*/
+#setUp .bg_choice .setBg{
+	width:110px;
+	height:130px;
+	float:left;
+	margin-top:10px;
+	margin-left:5px;
+}
+#setUp .bg_choice .setBg .radio{margin-left:10px;}
+#setUp .bg_choice .bg_show{
+	width:208px;
+	height:130px;
+	float:left;
+	margin-top:10px;
+	background:#fff;
+	border:1px solid #999;
+}
+#setUp .bg_choice .bg_show img{
+	width:208px;height:130px;
+}
+/*------------*/
+#setUp .img_choice .img_show ul li img{
+	width:50px;height:50px;
+	margin-top:3px;
+}
+#setUp .img_choice .but_color{
+	cursor:pointer;
+	color:#333;
+	background:linear-gradient(#D9DCE2,#A9B1BD);
+	border:1px solid #999;
+	font-family:"微软雅黑";
+}
+#setUp .bg_choice{
+}
+#setUp #sub,#setUp .close{
+	width:80px;
+	height:28px;
+	margin-top:8px;
+	border:1px solid #999;
+	background:linear-gradient(#D9DCE2,#A9B1BD);
+	color:#333;
+	font-size:15px;
+	font-family:"微软雅黑";
+}
+#setUp #sub{margin-left:340px;}
+#setUp .close{margin-left:13px;}
+/*---------------------帮助界面------------------------*/
+#main_menu #help{
+	width:100px;
+	height:20px;
+	background:#ccc;
+	border:1px solid #999;
+	border-radius:10px;
+	box-shadow:5px 5px 20px #666;
+	position:fixed;
+	top:320px;
+	z-index:20;
+	font-family:myFont;
+	font-size:18px;
+	color:#555;
+	overflow:hidden;
+	display:none;
+}
+#main_menu #help header{
+	width:760px;
+	height:35px;
+}
+#main_menu #help header ul{margin:10px 0;}
+#main_menu #help header ul li{
+	float:left;
+	width:120px;
+	height:35px;
+	line-height:35px;
+	text-align:center;
+	border:1px solid #999;
+	border-radius:10px 10px 0 0;
+	cursor:pointer;
+	background:#bbb;
+}
+#main_menu #help header ul li:hover{
+	background:linear-gradient(#bbb,#ccc,#bbb);
+}
+#main_menu #help header ul li:nth-child(1){margin-left:20px;}
+#main_menu #help header ul li.select{
+	height:36px;
+	border-bottom:none;
+	background:#ccc;
+}
+#main_menu #help header .close{
+	float:right;
+	width:20px;
+	height:20px;
+	color:#666;
+	background:#bbb;
+	line-height:20px;
+	text-align:center;
+	border:1px solid #666;
+	border-radius:50%;
+	margin:3px 10px;
+	font-size:20px;
+	cursor:pointer;
+}
+#main_menu #help header .close:hover{
+	width:26px;height:26px;
+	line-height:26px;
+	margin:0 7px;
+}
+#main_menu #help > article{
+	width:718px;
+	height:314px;
+	margin:0 auto;
+	border:1px solid #999;
+	font-size:20px;	
+}
+/*------------规则说明----------*/
+#main_menu #help  #rule{
+	height:314px;
+	clear:both;
+	overflow:hidden;
+}
+#main_menu #help  #rule dl{
+	margin:20px 30px;
+	width:360px;
+	height:100px;
+}
+#main_menu #help  #rule dl dd{
+	text-indent:40px;
+	margin-top:30px;
+	width:240px;
+	float:left;
+}
+#main_menu #help  #rule dl dt img{
+	width:120px;height:90px;
+	float:right;
+	margin:10px 0;
+	cursor:pointer;
+}
+/*------------模式简介----------*/
+#main_menu #help #modelDsc{
+	width:718px;
+	height:314px;
+	overflow:hidden;
+	position:relative;
+	display:none;
+}
+#main_menu #help #modelDsc div{height:314px;}
+/*目录*/
+#main_menu #help #modelDsc .catalog{
+	height:225px;
+	position:absolute;
+	top:35px;
+	right:20px;
+	border-left:1px solid #aaa;
+	cursor:pointer;
+	font-size:15px;
+}
+#main_menu #help #modelDsc .catalog dl{margin-top:15px;}
+#main_menu #help #modelDsc .catalog dd{
+	margin:20px 0;
+	position:relative;
+}
+#main_menu #help #modelDsc .catalog .cl_dot{
+	position:absolute;
+	left:-8px;
+	top:0;
+	background:#ccc;
+}
+#main_menu #help #modelDsc .catalog .cl_title{margin-left:10px;}
+#main_menu #help #modelDsc div section{
+	width:600px;
+	font-size:30px;
+	text-align:center;
+	font-weight:bold;
+}
+#main_menu #help #modelDsc div article p{
+	text-indent:-100px;
+	width:460px;
+	margin:5px 0 5px 120px;
+}	
+/*------------关于我们----------*/	
+#main_menu #help #about{
+	display:none;
+	padding-top:30px;
+}
+#main_menu #help #about p{
+	clear:both;
+	text-align:center;
+}
+
+/*------------------------地图绘制---------------------------*/
+#maps{
+	display:none;	
+}
+#maps .map_draw{
+	width:950px;
+	height:550px;
+	position:relative;
+}
+#maps .map_draw ul{
+	width:950px;
+	height:550px;
+}
+#maps .map_draw ul li{
+	width:48px;
+	height:48px;
+	line-height:48px;
+	font-size:25px;
+	color:#444;
+	float:left;
+	text-align:center;
+	border:1px solid #666;
+	opacity:0.8;
+}
+
+#right_option{
+	height:570px;
+	position:absolute;
+	top:0;
+	right:0;
+}
+/*图库*/
+#maps .map_depot{
+	width:200px;
+	height:450px;
+	background:rgba(255,255,255,0.5);
+	position:absolute;
+	right:10px;
+	top:30px;
+}
+#maps .map_depot .cont_visu{
+	width:160px;
+	height:380px;
+	overflow:hidden;
+	margin:30px 20px;
+}
+#maps .map_depot ul li{
+	width:160px;
+	height:90px;
+	background:#ccc;
+	cursor:pointer;
+	margin-top:5px;
+}
+#maps .map_depot strong{
+	position:absolute;
+	right:20px;
+	display:block;
+	text-align:center;
+	width:160px;
+	height:25px;
+	line-height:25px;
+	color:#fff;
+	background:rgba(180,180,180,0.5);
+	cursor:pointer;
+}
+#maps .map_depot strong.top{top:5px;display:none;}
+#maps .map_depot strong.bottom{bottom:5px;}
+#maps .map_depot strong:hover{
+	background:rgba(150,150,150,0.8);
+}
+#maps .map_depot ul li img{opacity:0.9;}
+#maps input,#maps button{
+	position:absolute;
+	right:70px;
+	margin:10px 0;
+	color:#333;
+	font-size:16px;
+	font-family:myFont;
+	cursor:pointer;	
+	box-shadow:2px 2px 5px #333;
+	height:30px;
+	width:80px;
+	background:#ca2;
+	border:1px solid #666;
+	border-radius:20px;
+}
+#maps .parm_draw{/*470 155 70 90*/
+	top:490px;
+	right:85px;
+	height:20px;
+	width:50px;
+	background:#ccc;
+	box-shadow:0 0;
+	border-radius:10px;
+	text-align:left;
+	line-height:20px;
+	display:none;
+	overflow:hidden;
+	cursor:default;
+}
+#maps input.custom{top:485px;}
+#maps input.starGame{top:520px;}
+#maps input.leave_draw{top:555px;}
+/*-----------------------提示说明------------------------*/
+#instruction{
+	position:fixed;
+	z-index:50;
+	display:none;
+	font-family:myFont;
+	color:#666;
+	background:#ccc;
+	border:1px solid #666;
+	padding:0 10px;
+	border-radius:5px;
+}
+#instruction img{margin-top:10px;}
+/*====================== E 主界面 ========================*/
+
+/*====================== S 游戏界面 ========================*/
+#game_interface{
+	display:none;
+}
+/*-----------图片-----------*/
+#box{
+	margin-top:70px;
+	position:relative;
+}
+#box ul li{
+	font-size:25px;
+	color:#444;
+	float:left;
+	text-align:center;
+	border:1px solid #ccc;
+	opacity:0.8;
+	cursor:pointer;
+}
+/*---------关卡----------*/
+h1.checkpoint{
+	width:580px;
+	height:120px;
+	line-height:120px;
+	text-align:center;
+	color:#fff;
+	font-size:60px;
+	border-radius:50px;
+	background:#999;
+	position:absolute;
+	opacity:0.7;
+	z-index:10;
+}
+
+/*---------时间进度条----------*/
+.time{
+	position:absolute;
+	top:5px;
+	left:3%;
+	width:94%;
+	height:20px;
+	border-radius:15px;
+	background:#ccc;
+}
+.time strong{
+	display:block;
+	width:100%;
+	height:20px;
+	border-radius:15px;
+	background:#66a1cc;
+}
+/*---------暂停和结束游戏----------*/
+#lock{
+	width:100%;
+	height:100%;
+	text-align:center;
+	background:#ccc;
+	position:absolute;
+	top:0;
+	z-index:99;
+	display:none;
+}
+#lock .pause{cursor:pointer;}
+#lock .pause,#lock .end{display:none;}
+#lock .pause h1{
+	display:block;
+	font-size:100px;
+	color:#333;
+	margin-top:200px;
+}
+#lock .pause p{
+	color:#666;
+}
+#lock .end h1{
+	display:block;
+	font-size:100px;
+	color:#333;
+	margin-top:150px;
+}
+#lock .end p{
+	color:#333;
+	font-size:28px;
+	line-height:50px;
+}
+#lock .end p.max_checkpoint{
+	text-indent:0;
+	font-size:50px;
+	line-height:80px;
+}
+#lock .end p span{
+	font-size:50px;
+	color:#c54;
+	margin-left:20px;
+}
+#lock .end input{
+	width:120px;
+	height:30px;
+	font-size:20px;
+	font-family:myFont;
+	color:#333;
+	margin-top:30px;
+	cursor:pointer;
+}
+/*-------消息弹窗-------*/
+#lock2{
+	width:100%;
+	height:100%;
+	position:absolute;
+	z-index:998;
+	top:0;left:0;
+	background:rgba(222,222,222,0.5);
+	display:none;
+}
+#lock2 .message{
+	width:240px;
+	height:130px;
+	background:#fff;
+	margin:0 auto;
+	padding:5px 10px;
+	border:1px solid #aaa;
+}
+#lock2 .message h3{
+	font-size:12px;
+	font-weight:none;
+	color:#999;
+	margin-top:5px;
+}
+#lock2 .message p{
+	width:220px;
+	height:32px;
+	margin:0 auto;
+	padding:23px 10px;
+	color:#444;
+	font-family:myFont;
+}
+#lock2 .message input{
+	width:50px;
+	height:25px;
+	background:#eee;
+	color:#555;
+	border:1px solid #bbb;
+	display:block;
+	margin-left:auto;
+	margin-right:10px;
+	cursor:pointer;
+}
+#lock2 .message input:hover{
+	background:#ddd;
+}
+/*--------连击----------*/
+#carom{
+	width:100px;
+	height:140px;
+	background:url(../images/carom.gif) no-repeat;
+	position:absolute;
+	bottom:-140px;
+	left:50px;
+	display:none;
+}
+#carom .carCou{
+	width:100px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	font-size:30px;
+	font-family:myFont;
+	margin-top:100px;
+	background:#ca3;
+}
+
+/*-----------按钮们------------*/
+nav{
+	width:60px;
+	position:absolute;
+	right:20px;
+	bottom:100px;
+}
+nav input{
+	margin:10px 0;
+	color:#333;
+	font-size:16px;
+	font-family:myFont;
+	cursor:pointer;	
+	box-shadow:2px 2px 5px #333;
+}
+nav input.stop,input.reset,input.mainMenu{
+	height:30px;
+	width:60px;
+	background:#ca2;
+	border:1px solid #666;
+	border-radius:20px;
+}
+
+nav input.prompt,input.refresh{
+	margin-left:10px;
+	width:35px;
+	height:35px;
+	text-align:left;
+	padding-top:13px;
+	font-weight:bold;
+	color:#843703;
+}
+nav input.prompt{
+	background:url("../images/prompt.png");
+	background-size:35px 35px;
+}
+nav input.refresh{
+	background:url("../images/refresh.png") no-repeat 90% 10%;
+	background-size:25px 25px;
+}
+
+/*------------分数---------------*/
+#grade{
+	width:35px;
+	height:25px;
+	position:absolute;
+	display:none;
+	color:#025;
+}
+/*右下角的总分*/
+#grades{
+	width:270px;
+	height:28px;
+	position:absolute;
+	right:20px;
+	bottom:5px;
+	background:#bbb;
+	border:1px solid #666;
+	border-radius:5px;
+	text-indent:20px;
+	font-size:20px;
+	font-family:myFont;
+	color:#333;
+}
+/*===================== E 游戏界面 ========================*/
